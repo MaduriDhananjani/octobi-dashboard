@@ -13,7 +13,7 @@ function Dashboard() {
       p={6}
       bg="#f5efff"
       minH="100vh"
-      w="calc(100vw - 250px)" // prevent horizontal overflow
+      w="calc(100vw - 250px)" 
       overflowX="hidden"
     >
       <Topbar />
@@ -37,7 +37,14 @@ function Dashboard() {
         <GridItem colSpan={[12, 12, 4]}>
           <Grid gap={6}>
             <PieChartBox />
-            <AuthMethodCard />
+          </Grid>
+        </GridItem>
+      </Grid>
+      <Grid templateColumns="repeat(12, 1fr)" gap={6} mb={6}>
+
+        <GridItem colSpan={[12, 12, 8]}>
+          <Grid gap={6}>
+          <AuthMethodCard />
           </Grid>
         </GridItem>
       </Grid>

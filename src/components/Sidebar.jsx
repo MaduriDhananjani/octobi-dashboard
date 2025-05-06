@@ -1,18 +1,18 @@
 import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings
+  FiGrid,
+  FiActivity,
+  FiEdit,
+  FiBookOpen,
+  FiShoppingBag,
 } from 'react-icons/fi'
 
 const LinkItems = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings }
+  { name: 'Dashboard', icon: FiGrid },
+  { name: 'Data Lab', icon: FiActivity },
+  { name: 'Surveys', icon: FiEdit },
+  { name: 'Library', icon: FiBookOpen },
+  { name: 'Marketplace', icon: FiShoppingBag },
 ]
 
 const Sidebar = () => {
@@ -29,7 +29,7 @@ const Sidebar = () => {
       zIndex="1"
     >
       <Text fontSize="2xl" fontWeight="bold" p={6}>
-        🐙 Bltentacles
+        🐙 Octobi
       </Text>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
