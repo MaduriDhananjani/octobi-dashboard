@@ -1,73 +1,53 @@
-'use client'
-
+import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import {
-  Box,
-  Flex,
-  Icon,
-  Text,
-} from '@chakra-ui/react'
-import {
-  FiGrid,
-  FiActivity,
-  FiEdit,
-  FiBookOpen,
-  FiShoppingBag,
+  FiHome,
+  FiTrendingUp,
+  FiCompass,
+  FiStar,
+  FiSettings
 } from 'react-icons/fi'
 
 const LinkItems = [
-  { name: 'Dashboard', icon: FiGrid },
-  { name: 'Data Lab', icon: FiActivity },
-  { name: 'Surveys', icon: FiEdit },
-  { name: 'Library', icon: FiBookOpen },
-  { name: 'Marketplace', icon: FiShoppingBag },
+  { name: 'Home', icon: FiHome },
+  { name: 'Trending', icon: FiTrendingUp },
+  { name: 'Explore', icon: FiCompass },
+  { name: 'Favourites', icon: FiStar },
+  { name: 'Settings', icon: FiSettings }
 ]
 
 const Sidebar = () => {
   return (
-    <Flex
+    <Box
+      position="fixed"
+      left="0"
+      top="0"
+      w="250px"
       h="100vh"
-      w="100vw"
+      bg="purple.50"
+      borderRight="1px solid #e2e8f0"
       overflow="hidden"
-      maxW="100vw"
+      zIndex="1"
     >
-      {/* Sidebar */}
-      <Box
-        w="250px"
-        bg="#f5efff"
-        p={5}
-        position="fixed"
-        top={0}
-        left={0}
-        bottom={0}
-      >
-        <Text fontSize="2xl" fontWeight="bold" mb={6} color="#1a1a1a">
-          🐙 BItentacles
-        </Text>
-        {LinkItems.map((link, index) => (
-          <NavItem
-            key={link.name}
-            icon={link.icon}
-            active={index === 0} // make Dashboard active
-          >
-            {link.name}
-          </NavItem>
-        ))}
-      </Box>
-    </Flex>
+      <Text fontSize="2xl" fontWeight="bold" p={6}>
+        🐙 Bltentacles
+      </Text>
+      {LinkItems.map((link) => (
+        <NavItem key={link.name} icon={link.icon}>
+          {link.name}
+        </NavItem>
+      ))}
+    </Box>
   )
 }
 
-const NavItem = ({ icon, children, active = false }) => (
+const NavItem = ({ icon, children }) => (
   <Flex
     align="center"
-    p="3"
-    mb="2"
+    p={4}
+    mx={4}
     borderRadius="md"
     cursor="pointer"
-    bg={active ? '#e7ddff' : 'transparent'}
-    color={active ? '#7e5cff' : 'gray.700'}
-    fontWeight={active ? 'semibold' : 'normal'}
-    _hover={{ bg: '#d9c8ff', color: '#7e5cff' }}
+    _hover={{ bg: 'purple.100', color: 'purple.800' }}
   >
     <Icon as={icon} mr="3" />
     <Text>{children}</Text>
